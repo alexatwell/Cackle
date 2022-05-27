@@ -49,6 +49,10 @@
         -webkit-overflow-scrolling: touch;
       }
 
+      .tab {
+      tab-size: 20;
+      }
+
       #fineprint {
       font-size: 10px;
       }
