@@ -56,3 +56,8 @@
       #fineprint {
       font-size: 10px;
       }
+
+
+      #more {
+          visibility: hidden;
+      }
