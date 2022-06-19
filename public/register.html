@@ -21,19 +21,21 @@
   <!-- End Jetpack Open Graph Tags -->
   <link rel="shortcut icon" type="image/x-icon" href="images/cackle_logo2.png" sizes="16x16 24x24 32x32 48x48" />
   <link rel="icon" type="image/x-icon" href="images/cackle_logo2.png" sizes="16x16 24x24 32x32 48x48" />
-
+  <script src="https://www.gstatic.com/firebasejs/9.8.3/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.8.3/firebase-auth.js"></script>
+  <script src="scripts/register.js"></script>
 </head>
   <body class="text-center">
     
 <main class="form-signin w-100 m-auto">
-  <form >
+  <form>
     <img class="mb-4" src="images/cackle_logo2.png" alt="" width="72" height="57">
     <h1 class="h3 mb-3 fw-normal">Register Here</h1>
 
-    <div class="form-floating">
+    <!--<div class="form-floating">
       <input type="text" class="form-control" id="name" placeholder="Please enter your full name here.">
       <label for="name">Full Name</label>
-    </div>
+    </div>-->
     <div class="form-floating">
       <input type="email" class="form-control" id="email" placeholder="name@example.com">
       <label for="email">Email address</label>
@@ -42,20 +44,19 @@
       <input type="password" class="form-control" id="password" placeholder="Password">
       <label for="password">Password</label>
     </div>
-    <div class="form-floating">
+    <!--<div class="form-floating">
       <input type="password" class="form-control" id="password2" placeholder="Confirm Password">
       <label for="password2">Repeat Password</label>
-    </div>
+    </div>-->
 
     <div class="checkbox mb-3">
       <label>
         <input type="checkbox" value="remember-me"> Remember me
       </label>
     </div>
-    <button onclick="register()" id="submitData" class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
+    <button onclick="register()"  class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
     <p class="mt-5 mb-3 text-muted">&copy; Flood Tech 2019–2022</p>
   </form>
 </main>
   </body>
-<script src="scripts/register.js"></script>
 </html>
