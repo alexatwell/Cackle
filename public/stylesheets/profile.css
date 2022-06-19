@@ -11,6 +11,16 @@ body {
  * Sidebar
  */
 
+ tr, th{
+
+     text-align: center;
+ }
+
+th{
+  font-weight: bold;
+ }
+
+
 .sidebar {
   position: fixed;
   top: 0;
