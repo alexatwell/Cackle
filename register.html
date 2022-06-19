@@ -23,37 +23,37 @@
   <link rel="icon" type="image/x-icon" href="images/cackle_logo2.png" sizes="16x16 24x24 32x32 48x48" />
 
   <!--<script src="scripts/register.js"></script>-->
-  <script src="../server.js"></script>
+  <script src="server.js"></script>
 </head>
   <body class="text-center">
     
 <main class="form-signin w-100 m-auto">
-  <form action="http://localhost/reg.php" method="post">
+  <form action="/" method="POST" id="register">
     <img class="mb-4" src="images/cackle_logo2.png" alt="" width="72" height="57">
     <h1 class="h3 mb-3 fw-normal">Register Here</h1>
 
     <div class="form-floating">
-      <input name="name" type="text" class="form-control" id="name" placeholder="Please enter your full name here.">
-      <label for="name">Full Name</label>
+      <input name="name" type="text" class="form-control" id="floatingName" placeholder="Please enter your full name here." required>
+      <label for="floatingName">Full Name</label>
     </div>
     <div class="form-floating">
-      <input name="mobile" type="number" class="form-control" id="mobile" placeholder="Mobile Number">
-      <label for="mobile">Mobile Number</label>
+      <input name="mobile" type="number" class="form-control" id="floatingInput2" placeholder="Mobile Number" required>
+      <label for="floatingInput2">Mobile Number</label>
     </div>
     <div class="form-floating">
-      <input name="email" type="email" class="form-control" id="email" placeholder="name@example.com">
-      <label for="email">Email Address</label>
+      <input name="email" type="email" class="form-control" id="floatingInput" placeholder="name@example.com" required>
+      <label for="floatingInput">Email Address</label>
     </div>
     <div class="form-floating">
-      <input name="address" type="text" class="form-control" id="address" placeholder="Please enter your home address here.">
-      <label for="address">Home Address</label>
+      <input name="address" type="text" class="form-control" id="floatingAddress" placeholder="Please enter your home address here." required>
+      <label for="floatingAddress">Home Address</label>
     </div>
     <div class="form-floating">
-      <input name="password" type="password" class="form-control" id="password" placeholder="Password">
-      <label for="password">Password</label>
+      <input name="password" type="password" class="form-control" id="floatingPassword" placeholder="Password" required>
+      <label for="floatingPassword">Password</label>
     </div>
     <div class="form-floating">
-      <input type="password" class="form-control" id="floatingPassword2" placeholder="Confirm Password">
+      <input type="password" class="form-control" id="floatingPassword2" placeholder="Confirm Password" required>
       <label for="floatingPassword2">Repeat Password</label>
     </div>
 
@@ -62,7 +62,7 @@
         <input type="checkbox" value="remember-me"> Remember me
       </label>
     </div>
-    <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
+    <button class="w-100 btn btn-lg btn-primary" type="submit" onclick="registration()">Sign in</button>
     <p class="mt-5 mb-3 text-muted">&copy; Flood Tech 2019–2022</p>
   </form>
 </main>
