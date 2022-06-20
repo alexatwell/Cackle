@@ -11,20 +11,34 @@ $emailAddress = $_POST['email'];
 $mobileNumber = $_POST['mobile'];
 $userPassword = $_POST['password'];
 
-echo $fullName;
+try {
 
-// database insert SQL code
-$sql = "INSERT INTO Users (FullName, MobileNumber, EmailAddress, Password) VALUES ('$fullName', '$mobileNumber', '$emailAddress', '$userPassword')";
+    $result = mysqli_query($con, "SELECT * FROM Users WHERE EmailAddress ='$emailAddress' or MobileNumber='$mobileNumber'");
 
-// insert in database
-if ($con->query($sql) === TRUE) {
-  echo "New record created successfully";
-  echo $sql;
-} else {
-  echo "Error: " . $sql . "<br>" . $con->error;
+
+    if (mysqli_num_rows($result)==0){
+        // database insert SQL code
+        $sql = "INSERT INTO Users (FullName, MobileNumber, EmailAddress, Password) VALUES ('$fullName', '$mobileNumber', '$emailAddress', '$userPassword')";
+
+        // insert in database
+        if ($con->query($sql) === TRUE) {
+          echo "New record created successfully";
+          echo $sql;
+          header("Location: interests.html");
+        } else {
+          echo "Error: " . $sql . "<br>" . $con->error;
+        }
+    } else {
+        echo '<script>alert("User Exists")</script>';
+    }
+} catch(PDOException $e) {
+     echo 'ERROR: ' . $e->getMessage();
 }
+
 $con->close();
 
-header("Location: interests.html");
-
 ?>
+
+<script>
+window.location.href="register.html"
+</script>
